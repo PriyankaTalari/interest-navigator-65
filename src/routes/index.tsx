@@ -201,21 +201,11 @@ function Index() {
   );
 }
 
-function Field({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-        {label}
-      </p>
-      <p
-        className={
-          accent
-            ? "mt-1 text-base font-semibold leading-snug text-primary"
-            : "mt-1 text-sm leading-relaxed text-foreground/90"
-        }
-      >
-        {value}
-      </p>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">{label}</p>
+      <p className="mt-1 text-sm leading-relaxed text-foreground/90">{value}</p>
     </div>
   );
 }
