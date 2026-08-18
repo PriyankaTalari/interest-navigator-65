@@ -98,8 +98,13 @@
   --ring: oklch(0.65 0.18 340);
   --label: oklch(0.65 0.22 350);
   --label-foreground: oklch(1 0 0);
+  --heading: oklch(0.7 0.18 55);
+  --heading-foreground: oklch(1 0 0);
+  --feed-category: oklch(0.96 0.05 95);
+  --feed-category-foreground: oklch(0.25 0.04 60);
   --output: oklch(0.22 0.05 250);
   --output-foreground: oklch(1 0 0);
+
   --surface-glow: 0 0 0 1px oklch(0.65 0.18 340 / 0.25), 0 18px 60px -20px oklch(0.65 0.18 340 / 0.35);
   --gradient-hero: linear-gradient(135deg, oklch(0.65 0.18 340 / 0.95), oklch(0.55 0.14 250 / 0.9));
   --gradient-panel: linear-gradient(160deg, oklch(1 0 0), oklch(0.96 0.01 245));
