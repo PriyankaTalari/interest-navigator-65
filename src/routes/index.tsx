@@ -71,7 +71,7 @@ function Index() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_1fr]">
         <section>
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h2 className="text-xl font-semibold text-primary">Your feed</h2>
+            <h2 className="text-xl font-semibold text-label">Your feed</h2>
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span className="whitespace-nowrap">Watched {engagement}%</span>
               <Slider
