@@ -97,7 +97,7 @@ function Index() {
                   {reel.caption}
                 </p>
                 <div className="mt-3 flex items-center justify-between gap-2">
-                  <Badge variant="secondary" className="text-[11px]">
+                  <Badge className="bg-black text-[11px] text-white hover:bg-black/90">
                     {reel.bucket}
                   </Badge>
                   <Button
