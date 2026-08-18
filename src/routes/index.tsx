@@ -71,7 +71,7 @@ function Index() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_1fr]">
         <section>
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h2 className="text-xl font-semibold">Your feed</h2>
+            <h2 className="text-xl font-semibold text-primary">Your feed</h2>
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span className="whitespace-nowrap">Watched {engagement}%</span>
               <Slider
@@ -145,7 +145,7 @@ function Index() {
         </section>
 
         <section className="lg:sticky lg:top-10 lg:self-start">
-          <h2 className="text-xl font-semibold">Agent output</h2>
+          <h2 className="text-xl font-semibold text-primary">Agent output</h2>
 
           {mutation.isPending && (
             <Card className="panel mt-5 flex items-center gap-3 p-6 text-sm text-muted-foreground">
@@ -173,21 +173,21 @@ function Index() {
           {rec && !mutation.isPending && (
             <Card className="panel glow mt-5 space-y-4 p-6">
               <Field label="Current reel" value={rec.currentReel} />
-              <Field label="Interest detected" value={rec.interestDetected} accent />
+              <Field label="Interest detected" value={rec.interestDetected} />
               <Field label="Why" value={rec.why} />
               <div className="h-px bg-border" />
-              <Field label="Recommended tech reel" value={rec.recommendedTechReel} accent />
+              <Field label="Recommended tech reel" value={rec.recommendedTechReel} />
               <div className="flex flex-wrap gap-2">
                 <Badge className="bg-primary/15 text-primary">{rec.category}</Badge>
                 <Badge variant="secondary">{rec.difficulty}</Badge>
-                <Badge variant="outline" className="border-accent/50 text-accent">
+                <Badge variant="outline" className="border-primary/40 text-primary">
                   Confidence: {rec.confidence}
                 </Badge>
               </div>
               <Field label="Why this recommendation" value={rec.whyThisRecommendation} />
               {rec.avoidedHype && (
-                <div className="rounded-lg border border-accent/30 bg-accent/5 p-3">
-                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-accent">
+                <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
+                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-primary">
                     <Sparkles className="size-3.5" /> Hype rejected
                   </p>
                   <p className="mt-1.5 text-sm text-muted-foreground">{rec.avoidedHype}</p>
@@ -201,21 +201,11 @@ function Index() {
   );
 }
 
-function Field({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-        {label}
-      </p>
-      <p
-        className={
-          accent
-            ? "mt-1 text-base font-semibold leading-snug text-primary"
-            : "mt-1 text-sm leading-relaxed text-foreground/90"
-        }
-      >
-        {value}
-      </p>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">{label}</p>
+      <p className="mt-1 text-sm leading-relaxed text-foreground/90">{value}</p>
     </div>
   );
 }
