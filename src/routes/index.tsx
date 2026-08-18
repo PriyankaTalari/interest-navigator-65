@@ -220,8 +220,11 @@ function Index() {
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-label">{label}</p>
-      <p className="mt-1 text-sm leading-relaxed text-white">{value}</p>
+      <span className="inline-block rounded-md bg-heading px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-heading-foreground">
+        {label}
+      </span>
+      <p className="mt-2 text-sm leading-relaxed text-white">{value}</p>
     </div>
   );
 }
+
