@@ -202,12 +202,13 @@ function Index() {
 
               {rec.avoidedHype && (
                 <div className="rounded-lg border border-label/30 bg-black/20 p-3">
-                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-label">
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-heading px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-heading-foreground">
                     <Sparkles className="size-3.5" /> Hype rejected
-                  </p>
+                  </span>
                   <p className="mt-1.5 text-sm text-white/90">{rec.avoidedHype}</p>
                 </div>
               )}
+
             </Card>
           )}
         </section>
