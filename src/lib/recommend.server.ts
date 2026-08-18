@@ -28,6 +28,7 @@ Hard rules:
 Return ONLY JSON matching:
 {"currentReel":string,"interestDetected":string,"why":string,"recommendedTechReel":string,"category":"AI|DSA|Java|HLD|Cybersecurity|Cloud|Hardware|Career|Other","whyThisRecommendation":string,"difficulty":"Beginner|Intermediate|Advanced","confidence":"High|Medium|Low","avoidedHype":string}
 
+currentReel = just the reel's title plus its handle, e.g. "Java devs writing 40 lines to print Hello World (@byte.jokes)". Never dump the full metadata block.
 avoidedHype = one short line naming the shallow/hype recommendation you deliberately rejected and why.`;
 
 function describe(reel: Reel, watchedFor?: number) {
