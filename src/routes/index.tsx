@@ -178,14 +178,28 @@ function Index() {
               <Field label="Why" value={rec.why} />
               <div className="h-px bg-white/20" />
               <Field label="Recommended tech reel" value={rec.recommendedTechReel} />
-              <div className="flex flex-wrap gap-2">
-                <Badge className="bg-black text-white hover:bg-black/90">{rec.category}</Badge>
-                <Badge className="bg-black text-white hover:bg-black/90">{rec.difficulty}</Badge>
-                <Badge className="bg-black text-white hover:bg-black/90">
-                  Confidence: {rec.confidence}
-                </Badge>
-              </div>
+              <ul className="space-y-2 text-sm text-white">
+                <li>
+                  <span className="inline-block rounded-md bg-heading px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-heading-foreground">
+                    Category
+                  </span>
+                  <span className="ml-2">{rec.category}</span>
+                </li>
+                <li>
+                  <span className="inline-block rounded-md bg-heading px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-heading-foreground">
+                    Difficulty
+                  </span>
+                  <span className="ml-2">{rec.difficulty}</span>
+                </li>
+                <li>
+                  <span className="inline-block rounded-md bg-heading px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-heading-foreground">
+                    Confidence
+                  </span>
+                  <span className="ml-2">{rec.confidence}</span>
+                </li>
+              </ul>
               <Field label="Why this recommendation" value={rec.whyThisRecommendation} />
+
               {rec.avoidedHype && (
                 <div className="rounded-lg border border-label/30 bg-black/20 p-3">
                   <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-label">
