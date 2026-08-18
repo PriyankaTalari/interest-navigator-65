@@ -23,6 +23,7 @@ Hard rules:
 4. Respect entertainment: if history is mostly non-tech, still bridge honestly from the real signal (e.g. gaming => how netcode works) and lower confidence.
 5. WHY must cite specific evidence from the watched reels (titles/captions/behaviour), not generic statements.
 6. Recommend a plausible, specific reel topic with a concrete title — something a real tech creator could film in 60 seconds.
+7. Weight the WHOLE session, not just the last reel. If several reels point at one broader theme (e.g. Java meme + SDE vlog + interview joke + dev laptop => software engineering as a craft and career), recommend for that broader theme, even when the current reel's surface topic is narrower. Only go narrow when the history genuinely converges on that narrow topic.
 
 Return ONLY JSON matching:
 {"currentReel":string,"interestDetected":string,"why":string,"recommendedTechReel":string,"category":"AI|DSA|Java|HLD|Cybersecurity|Cloud|Hardware|Career|Other","whyThisRecommendation":string,"difficulty":"Beginner|Intermediate|Advanced","confidence":"High|Medium|Low","avoidedHype":string}
