@@ -55,7 +55,7 @@ function Index() {
   return (
     <main className="mx-auto max-w-6xl px-5 py-12">
       <header className="max-w-2xl">
-        <Badge variant="outline" className="border-primary/40 text-primary">
+        <Badge variant="outline" className="border-label/40 text-label">
           Interest inference agent
         </Badge>
         <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
@@ -71,7 +71,7 @@ function Index() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.05fr_1fr]">
         <section>
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <h2 className="text-xl font-semibold text-primary">Your feed</h2>
+            <h2 className="text-xl font-semibold text-label">Your feed</h2>
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span className="whitespace-nowrap">Watched {engagement}%</span>
               <Slider
@@ -97,7 +97,7 @@ function Index() {
                   {reel.caption}
                 </p>
                 <div className="mt-3 flex items-center justify-between gap-2">
-                  <Badge variant="secondary" className="text-[11px]">
+                  <Badge className="bg-black text-[11px] text-white hover:bg-black/90">
                     {reel.bucket}
                   </Badge>
                   <Button
@@ -145,52 +145,52 @@ function Index() {
         </section>
 
         <section className="lg:sticky lg:top-10 lg:self-start">
-          <h2 className="text-xl font-semibold text-primary">Agent output</h2>
+          <h2 className="text-xl font-semibold text-label">Agent output</h2>
 
           {mutation.isPending && (
-            <Card className="panel mt-5 flex items-center gap-3 p-6 text-sm text-muted-foreground">
-              <Loader2 className="size-4 animate-spin text-primary" />
+            <Card className="output-panel glow mt-5 flex items-center gap-3 p-6 text-sm text-white/80">
+              <Loader2 className="size-4 animate-spin text-label" />
               Reading the signal behind that reel…
             </Card>
           )}
 
           {mutation.isError && !mutation.isPending && (
-            <Card className="panel mt-5 p-6 text-sm">
+            <Card className="output-panel glow mt-5 p-6 text-sm text-white">
               <p className="flex items-center gap-2 font-semibold text-destructive">
                 <ShieldAlert className="size-4" /> The agent could not respond
               </p>
-              <p className="mt-2 text-muted-foreground">{(mutation.error as Error).message}</p>
+              <p className="mt-2 text-white/80">{(mutation.error as Error).message}</p>
             </Card>
           )}
 
           {!mutation.isPending && !rec && !mutation.isError && (
-            <Card className="panel mt-5 p-6 text-sm text-muted-foreground">
+            <Card className="output-panel glow mt-5 p-6 text-sm text-white/80">
               Watch a Java meme, an SDE lifestyle vlog, an interview joke and a laptop
               comparison — then see whether the agent says “Java” or “software engineering”.
             </Card>
           )}
 
           {rec && !mutation.isPending && (
-            <Card className="panel glow mt-5 space-y-4 p-6">
+            <Card className="output-panel glow mt-5 space-y-4 p-6 text-white">
               <Field label="Current reel" value={rec.currentReel} />
               <Field label="Interest detected" value={rec.interestDetected} />
               <Field label="Why" value={rec.why} />
-              <div className="h-px bg-border" />
+              <div className="h-px bg-white/20" />
               <Field label="Recommended tech reel" value={rec.recommendedTechReel} />
               <div className="flex flex-wrap gap-2">
-                <Badge className="bg-primary/15 text-primary">{rec.category}</Badge>
-                <Badge variant="secondary">{rec.difficulty}</Badge>
-                <Badge variant="outline" className="border-primary/40 text-primary">
+                <Badge className="bg-black text-white hover:bg-black/90">{rec.category}</Badge>
+                <Badge className="bg-black text-white hover:bg-black/90">{rec.difficulty}</Badge>
+                <Badge className="bg-black text-white hover:bg-black/90">
                   Confidence: {rec.confidence}
                 </Badge>
               </div>
               <Field label="Why this recommendation" value={rec.whyThisRecommendation} />
               {rec.avoidedHype && (
-                <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
-                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-primary">
+                <div className="rounded-lg border border-label/30 bg-black/20 p-3">
+                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-label">
                     <Sparkles className="size-3.5" /> Hype rejected
                   </p>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{rec.avoidedHype}</p>
+                  <p className="mt-1.5 text-sm text-white/90">{rec.avoidedHype}</p>
                 </div>
               )}
             </Card>
@@ -204,8 +204,8 @@ function Index() {
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">{label}</p>
-      <p className="mt-1 text-sm leading-relaxed text-foreground/90">{value}</p>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-label">{label}</p>
+      <p className="mt-1 text-sm leading-relaxed text-white">{value}</p>
     </div>
   );
 }
