@@ -173,21 +173,21 @@ function Index() {
           {rec && !mutation.isPending && (
             <Card className="panel glow mt-5 space-y-4 p-6">
               <Field label="Current reel" value={rec.currentReel} />
-              <Field label="Interest detected" value={rec.interestDetected} accent />
+              <Field label="Interest detected" value={rec.interestDetected} />
               <Field label="Why" value={rec.why} />
               <div className="h-px bg-border" />
-              <Field label="Recommended tech reel" value={rec.recommendedTechReel} accent />
+              <Field label="Recommended tech reel" value={rec.recommendedTechReel} />
               <div className="flex flex-wrap gap-2">
                 <Badge className="bg-primary/15 text-primary">{rec.category}</Badge>
                 <Badge variant="secondary">{rec.difficulty}</Badge>
-                <Badge variant="outline" className="border-accent/50 text-accent">
+                <Badge variant="outline" className="border-primary/40 text-primary">
                   Confidence: {rec.confidence}
                 </Badge>
               </div>
               <Field label="Why this recommendation" value={rec.whyThisRecommendation} />
               {rec.avoidedHype && (
-                <div className="rounded-lg border border-accent/30 bg-accent/5 p-3">
-                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-accent">
+                <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
+                  <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-primary">
                     <Sparkles className="size-3.5" /> Hype rejected
                   </p>
                   <p className="mt-1.5 text-sm text-muted-foreground">{rec.avoidedHype}</p>
