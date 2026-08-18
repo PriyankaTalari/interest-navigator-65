@@ -55,7 +55,7 @@ function Index() {
   return (
     <main className="mx-auto max-w-6xl px-5 py-12">
       <header className="max-w-2xl">
-        <Badge variant="outline" className="border-primary/40 text-primary">
+        <Badge variant="outline" className="border-label/40 text-label">
           Interest inference agent
         </Badge>
         <h1 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
