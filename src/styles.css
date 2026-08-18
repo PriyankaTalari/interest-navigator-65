@@ -55,6 +55,11 @@
   --color-label-foreground: var(--label-foreground);
   --color-output: var(--output);
   --color-output-foreground: var(--output-foreground);
+  --color-heading: var(--heading);
+  --color-heading-foreground: var(--heading-foreground);
+  --color-feed-category: var(--feed-category);
+  --color-feed-category-foreground: var(--feed-category-foreground);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
